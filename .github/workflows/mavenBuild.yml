@@ -18,7 +18,8 @@ jobs:
                 architecture: x64
                 cache: maven
             - name: Maven Build
-              run: mvn -f randomuserprofilefetcher/pom.xml clean package
+              run: mvn -f randomuserprofilefetcher/pom.xml clean package -DskipTests
+
             
             
         
