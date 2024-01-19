@@ -5,7 +5,7 @@ on:
 
 jobs:
     build:
-        name: Build Job
+        name: Build-Java-Project-Job
         runs-on: ubuntu-latest
         
         steps:
