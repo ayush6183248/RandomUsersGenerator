@@ -19,6 +19,12 @@ jobs:
                 cache: maven
             - name: Maven Build
               run: mvn -f randomuserprofilefetcher/pom.xml clean package -DskipTests
+            
+            - name: Store In Artifact
+              uses: actions/upload-artifact@v3
+              with:
+                name: target
+                path: /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/randomuserprofilefetcher/target
 
             
             
