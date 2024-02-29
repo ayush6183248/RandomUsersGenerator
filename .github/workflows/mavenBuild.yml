@@ -17,14 +17,25 @@ jobs:
                 distribution: 'temurin'
                 architecture: x64
                 cache: maven
+            - name: Checkout Other Repo
+              uses: actions/checkout@v4
+              with:
+                repository: AyushSrivastava2023/randomUsers
+                token: ${{ secrets.PAT_TOKEN }}
+
             - name: Maven Build
-              run: mvn -f randomuserprofilefetcher/pom.xml clean package -DskipTests
-            
+              run: |
+                mvn -f randomuserprofilefetcher/pom.xml clean package -DskipTests
+                mvn -f AyushSrivastava2023/randomUsers/pom.xml clean package -DskipTests
+        
             - name: Store In Artifact
               uses: actions/upload-artifact@v3
               with:
                 name: target
-                path: /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/randomuserprofilefetcher/target
+                path: |
+                  /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/randomuserprofilefetcher/target
+                  /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/randomUsers/target
+        
 
             
             
