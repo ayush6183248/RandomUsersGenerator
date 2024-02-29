@@ -24,7 +24,7 @@ jobs:
                 token: ${{ secrets.PAT_TOKEN }}
 
             - name: List Files in Repository Directory
-              run: ls -R /
+              run: ls -al /
 
             - name: Maven Build
               run: |
