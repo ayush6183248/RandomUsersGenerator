@@ -23,6 +23,9 @@ jobs:
                 repository: AyushSrivastava2023/randomUsers
                 token: ${{ secrets.PAT_TOKEN }}
 
+            - name: List Files in Repository Directory
+              run: ls 
+
             - name: Maven Build
               run: |
                 mvn -f randomuserprofilefetcher/pom.xml clean package -DskipTests
