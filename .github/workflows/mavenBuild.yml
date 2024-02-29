@@ -27,7 +27,10 @@ jobs:
                 path: repoB
 
             - name: List Files in Repository Directory
-              run: ls 
+              run: |
+                ls 
+                ls -al repoA
+                ls -al repoB
 
             - name: Maven Build
               run: |
