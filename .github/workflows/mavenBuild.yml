@@ -37,13 +37,17 @@ jobs:
                 mvn -f repoA/randomuserprofilefetcher/pom.xml clean package -DskipTests
                 mvn -f repoB/randomuserprofilefetcher/pom.xml clean package -DskipTests
         
-            - name: Store In Artifact
+            - name: Store RepoA In Artifact
               uses: actions/upload-artifact@v4
               with:
-                name: target
-                path: |
-                  /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/repoA/randomuserprofilefetcher/target
-                  /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/repoB/randomuserprofilefetcher/target
+                name: repoA
+                path: /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/repoA/randomuserprofilefetcher/target
+            
+            - name: Store RepoB In Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: repoB
+                path: /home/runner/work/RandomUsersGenerator/RandomUsersGenerator/repoB/randomuserprofilefetcher/target
         
 
             
