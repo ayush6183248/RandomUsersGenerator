@@ -34,8 +34,8 @@ jobs:
 
             - name: Maven Build
               run: |
-                mvn -f randomuserprofilefetcher/pom.xml clean package -DskipTests
-                mvn -f randomUsers/randomuserprofilefetcher/pom.xml clean package -DskipTests
+                mvn -f repoA/randomuserprofilefetcher/pom.xml clean package -DskipTests
+                mvn -f repoB/randomuserprofilefetcher/pom.xml clean package -DskipTests
         
             - name: Store In Artifact
               uses: actions/upload-artifact@v3
