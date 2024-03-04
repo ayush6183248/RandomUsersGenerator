@@ -2,6 +2,8 @@ name: Java Maven Build
 on:
     push:
         branches: ["master"]
+    pull_request:
+        branches: ["master"]
 
 jobs:
     build_java:
